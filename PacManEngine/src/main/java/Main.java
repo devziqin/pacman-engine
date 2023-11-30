@@ -1,4 +1,5 @@
 
+import algorithm.DFS.DFS;
 import examples.StarterGhostComm.Blinky;
 import examples.StarterGhostComm.Inky;
 import examples.StarterGhostComm.Pinky;
@@ -41,12 +42,14 @@ public class Main {
         controllers.put(GHOST.PINKY, new Pinky());
         controllers.put(GHOST.SUE, new Sue());
 
-        int speed = 10000; // smaller number will run faster
+        int speed = 1; // smaller number will run faster
 
         MASController ghosts = new POCommGhosts(50);
         // executor.runGameTimed(new MonteCarlo(), new MASController(controllers));
-        // executor.runGame(new MonteCarloTreeSearch(), ghosts, speed);
-        executor.runGame(new AStarSearch(ghosts, 15, 15, 20), ghosts, speed);
-        // executor.runGame(new TreeSearchPacMan(), ghosts, speed);
+//         executor.runGame(new MonteCarloTreeSearch(), ghosts, speed);
+//        executor.runGame(new AStarSearch(ghosts, 15, 15, 20), ghosts, speed);
+//         executor.runGame(new TreeSearchPacMan(), ghosts, speed);
+//        executor.runGame(new GeneticPacman2(new Genome(473, 3.1854737562458, 688, 9768, -8513, 3055, 521, 79, 4)),ghosts,speed);
+        executor.runGame(new DFS(),ghosts,speed);
     }
 }
